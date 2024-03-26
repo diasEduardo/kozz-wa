@@ -82,7 +82,7 @@ export const createMediaReceivedPayload = async (
 				mimeType: messageMedia.mimetype,
 				fileName: messageMedia.filename || null,
 				sizeInBytes: messageMedia.filesize || null,
-				duration: Number(message.duration) || null,
+				//duration: Number(message.duration) || null,
 				transportType: 'b64',
 			};
 		}
