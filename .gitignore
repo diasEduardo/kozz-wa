@@ -3,5 +3,6 @@ dist
 coverage
 .wwebjs_auth
 .env
+.env.dev
 /keys/*
 .wwebjs_cache
