@@ -14,6 +14,4 @@ RUN apt-get install -y --no-install-recommends ffmpeg
 
 RUN yarn install
 
-COPY ./node_modules/kozz-types/dist/Common/index.d.ts ./node_modules/kozz-types/dist/Common/index.d.ts
-
 CMD yarn start
