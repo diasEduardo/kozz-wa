@@ -2,5 +2,3 @@ dist
 .wwebjs_cache
 .wwebjs_auth
 node_modules
-.env
-.env.dev
