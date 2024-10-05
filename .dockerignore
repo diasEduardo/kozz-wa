@@ -1,4 +1,4 @@
 dist
 .wwebjs_cache
 .wwebjs_auth
-keys
+node_modules
