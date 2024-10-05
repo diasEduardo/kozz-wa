@@ -11,6 +11,7 @@ export const registerSocketHandlers = (whatsappBoundary: Client, socket: Socket)
 	Object.entries(handlers).forEach(([evName, handler]) => {
 		socket.on(evName, async payload => {
 			try {
+				
 				handler(whatsappBoundary, socket)(payload)
 			} catch (e) {
 				console.warn(e);

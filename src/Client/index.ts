@@ -16,6 +16,28 @@ const createBoundary = (socket: WaSocket) => {
 		authStrategy: new LocalAuth(),
 		puppeteer: {
 			executablePath: chromePath,
+			args:[
+				'--kiosks',
+				'--disable-accelerated-2d-canvas',
+				'--disable-backgrounding-occluded-windows',
+				'--disable-renderer-backgrounding',
+				'--disable-canvas-aa',
+				'--disable-2d-canvas-clip-aa',
+				'--disable-gl-drawing-for-tests',
+				'--disable-dev-shm-usage', 
+				'--disable-gpu',
+				'--no-zygote', 
+				'--use-gl=desktop', 
+				'--hide-scrollbars',
+				'--mute-audio',
+				'--no-first-run',
+				'--disable-infobars',
+				'--disable-breakpad', 
+				'--no-sandbox',
+				'--disable-setuid-sandbox',
+				'--enable-logging',
+				'--v=1'
+			],
 			headless: true,
 		},
 	});
@@ -30,6 +52,7 @@ const createBoundary = (socket: WaSocket) => {
 
 	whatsappBoundary.on('change_state', state => {
 		console.log(state);
+		process.exit(0);
 	});
 
 	whatsappBoundary.on('auth_failure', message => console.log(message));
