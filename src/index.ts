@@ -15,9 +15,12 @@ wppClient.initialize();
 
 registerSocketHandlers(wppClient, socket);
 
+/*
 timedDelay({
     hours:1,
     minutes:0,
     seconds:0,
     miliseconds:0
 })
+    */
+

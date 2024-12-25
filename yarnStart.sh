@@ -1,0 +1,1 @@
+cd /home/eduardi/bot/my-kozz-bot/kozz-wa/ && yarn start

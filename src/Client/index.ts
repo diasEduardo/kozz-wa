@@ -9,14 +9,17 @@ type WaSocket = Socket;
 
 const chromePath = runningOnWindows()
 	? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-	: '/usr/bin/google-chrome-stable';
+	: '/usr/bin/chromium'
+	//arch arm 64 '/usr/bin/chromium'
+	// linux path '/usr/bin/google-chrome-stable';
 
 const createBoundary = (socket: WaSocket) => {
 	const whatsappBoundary = new Client({
 		authStrategy: new LocalAuth(),
 		puppeteer: {
 			executablePath: chromePath,
-
+			args:['--no-sandbox'],
+			/*
 			args:[
 				'--kiosks',
 				'--disable-accelerated-2d-canvas',
@@ -39,6 +42,7 @@ const createBoundary = (socket: WaSocket) => {
 				'--enable-logging',
 				'--v=1'
 			],
+			*/
 			headless: true,
 		},
 	});
@@ -53,7 +57,7 @@ const createBoundary = (socket: WaSocket) => {
 
 	whatsappBoundary.on('change_state', state => {
 		console.log(state);
-		process.exit(0);
+		//process.exit(0);
 	});
 
 	whatsappBoundary.on('auth_failure', message => console.log(message));

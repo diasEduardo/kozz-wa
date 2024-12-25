@@ -32,7 +32,6 @@ export const reply_with_sticker =
 			);
 		}
 		const { data, fileName, mimeType, sizeInBytes, stickerTags } = payload.media;
-
 		whatsappBoundary.sendMessage(
 			payload.chatId,
 			new MessageMedia(mimeType, data, fileName, sizeInBytes),
